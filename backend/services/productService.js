@@ -74,8 +74,9 @@ class ProductService {
     }
 
     async addPoultry(product){
-        const { Start_date, Type, Breed, Price, Growth_time, Gender, Start_weight, shelter_ID,Egg } = product;
-        return await sequelize.query('CALL insert_poultry(:p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8, :p9',{
+        const { Start_date, Type, Breed, Price, Growth_time, Gender, Start_weight, Shelter_ID,Egg } = product;
+        console.log(product);
+        return await sequelize.query('CALL insert_animal_poultry(:p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8, :p9)',{
             replacements:{
                 p1: Start_date,
                 p2: Type,
@@ -84,14 +85,14 @@ class ProductService {
                 p5: Growth_time,
                 p6: Gender, 
                 p7: Start_weight,
-                p8: shelter_ID,
+                p8: Shelter_ID,
                 p9: Egg
         }});
     }
 
     async addLivestock(product){
         const { Start_date, Type, Breed, Price, Growth_time, Gender, Start_weight, shelter_ID } = product;
-        return await sequelize.query('CALL insert_livestock(:p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8)',{
+        return await sequelize.query('CALL insert_animal_lives_stock(:p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8)',{
             replacements:{
                 p1: Start_date,
                 p2: Type,

@@ -22,4 +22,4 @@ const FarmModel = sequelize.define('Farm', {
     timestamps: false
 });
 
-module.exports = Product;
+module.exports = FarmModel;
