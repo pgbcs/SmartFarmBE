@@ -1,5 +1,15 @@
 const jwt = require('jsonwebtoken');
 
+function generateToken(payload, expiresIn = '1d'){
+    try{
+        const token = jwt.sign(payload, process.env.JWT_SECRET, {expiresIn});
+        return token;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
 // Middleware kiểm tra JWT và phân quyền theo role
 function verifyToken(req, res, next) {
     const token = req.headers['authorization']; // Lấy token từ header Authorization
@@ -33,4 +43,4 @@ function authorizeRole(roles) {
     };
 }
 
-module.exports = { verifyToken, authorizeRole };
+module.exports = { verifyToken, authorizeRole, generateToken };

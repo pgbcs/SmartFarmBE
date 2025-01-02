@@ -30,4 +30,4 @@ const FarmerModel = sequelize.define('Farmer', {
     timestamps: false
 });
 
-module.exports = Product;
+module.exports = FarmerModel;

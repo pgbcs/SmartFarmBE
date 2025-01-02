@@ -104,7 +104,9 @@ exports.addCrop = async function (req, res){
     try{
         const product = req.body;
         const result = await productService.addCrop(product);
-        res.status(200).json(result);
+        res.status(200).json({
+            message: 'Add crop successfully',
+        });
     }catch(error){
         res.status(400).json({message: error.message});
     }
@@ -114,7 +116,9 @@ exports.addAqua = async function (req, res){
     try{
         const product = req.body;
         const result = await productService.addAqua(product);
-        res.status(200).json(result);
+        res.status(200).json({
+            message: 'Add aqua successfully',
+        });
     }catch(error){
         res.status(400).json({message: error.message});
     }
@@ -124,7 +128,9 @@ exports.addPoultry = async function (req, res){
     try{
         const product = req.body;
         const result = await productService.addPoultry(product);
-        res.status(200).json(result);
+        res.status(200).json({
+            message: 'Add poultry successfully',
+        });
     }catch(error){
         res.status(400).json({message: error.message});
     }
@@ -134,7 +140,9 @@ exports.addLivestock = async function (req, res){
     try{
         const product = req.body;
         const result = await productService.addLivestock(product);
-        res.status(200).json(result);
+        res.status(200).json({
+            message: 'Add livestock successfully',
+        });
     }catch(error){
         res.status(400).json({message: error.message});
     }
@@ -144,7 +152,9 @@ exports.deleteProduct = async function (req, res){
     try{
         const id = req.query.id;
         const result = await productService.deleteProduct(id);
-        res.status(200).json(result);
+        res.status(200).json({
+            message: 'Delete product successfully',
+        });
     }catch(error){
         res.status(400).json({message: error.message});
     }
