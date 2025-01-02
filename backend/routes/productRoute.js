@@ -7,6 +7,7 @@ class ProductRoute{
     }
     routes(){
         router.get('/getProductsNotSold', this.productController.getProductsNotSold);
+        
         router.get('/getProductById', this.productController.getProductById);
         router.get('/searchProduct', this.productController.searchProduct);
         router.get('/getProductsByGenType', this.productController.getProductsByGenType);

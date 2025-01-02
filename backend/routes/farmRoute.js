@@ -7,7 +7,9 @@ class FarmRoute{
     }
     routes(){
         router.get('/getFarms', this.farmController.getFarms);
+
         router.get('/getFarmById', this.farmController.getFarmById);
+        
         router.get('/searchFarm', this.farmController.searchFarm);
         
         router.post('/addFarm', this.farmController.addFarm);

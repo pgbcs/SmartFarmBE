@@ -2,12 +2,14 @@ const FarmModel = require('../models/farmModel');
 const {findBestMatchColumn} = require('../utils/search');
 
 class FarmService {
+    
     async getFarms(limit, offset) {
         return await FarmModel.findAndCountAll({
             limit,
             offset,
         });
     }
+
     async getFarmById(id) {
         return await FarmModel.findByPk(id);
     }
